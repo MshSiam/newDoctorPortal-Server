@@ -1,23 +1,20 @@
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Home from './Pages/Home/Home/Home';
-import Appointment from './Pages/Appointment/Appointment/Appointment';
-import Login from './Pages/Login/Login/Login';
-import Register from './Pages/Login/Register/Register';
-import AuthProvider from './contexts/AuthProvider/AuthProvider';
-import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
-import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import "./App.css"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import Home from "./Pages/Home/Home/Home"
+import Appointment from "./Pages/Appointment/Appointment/Appointment"
+import Login from "./Pages/Login/Login/Login"
+import Register from "./Pages/Login/Register/Register"
+import AuthProvider from "./contexts/AuthProvider/AuthProvider"
+import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute"
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard"
+import Navigation from "./Pages/Shared/Navigation/Navigation"
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
         <Router>
+          <Navigation></Navigation>
           <Switch>
             <PrivateRoute path="/appointment">
               <Appointment />
@@ -41,7 +38,7 @@ function App() {
         </Router>
       </AuthProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
